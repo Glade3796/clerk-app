@@ -1,5 +1,3 @@
-
-
 export default async function Home() {
   return (
     <section className="mt-12  flex w-1/3 flex-col  px-4">
