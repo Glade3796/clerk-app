@@ -19,13 +19,6 @@ export default async function MoviesPage({ searchParams }) {
   }
   return (
     <section className="flex flex-col gap-4">
-      <nav className="flex flex-row gap-4">
-        <Link href="/dashboard">default </Link>
-
-        <Link href="/dashboard?sort=asc">asc</Link>
-
-        <Link href="/dashboard?sort=des">desc</Link>
-      </nav>
       <Suspense fallback={<p>Loading feed...</p>}>
         {movies.map((movie) => (
           <div
