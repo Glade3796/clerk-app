@@ -1,26 +1,31 @@
-import { NextResponse } from "next/server";
-import { auth, currentUser } from "@clerk/nextjs";
+// import { NextResponse } from "next/server";
+// import { auth, currentUser } from "@clerk/nextjs";
+// import { sql } from "@vercel/postgres";
 
-export async function GET_user() {
-  const user = await currentUser();
+// export async function GET() {
+//     const { rows } = await sql`SELECT * FROM posts WHERE likes > ${likes};`;
+// }
 
-  if (!user) {
-    return new Response("Unauthorized", { status: 401 });
-  }
-  return NextResponse.json({ user });
-}
+// export async function GET_user() {
+//   const user = await currentUser();
 
-export async function GET() {
-  const { userId, getToken } = auth();
+//   if (!user) {
+//     return new Response("Unauthorized", { status: 401 });
+//   }
+//   return NextResponse.json({ user });
+// }
 
-  if (!userId) {
-    return new Response("Unauthorized", { status: 401 });
-  }
+// export async function GET() {
+//   const { userId, getToken } = auth();
 
-  const token = { template: "supabase" };
+//   if (!userId) {
+//     return new Response("Unauthorized", { status: 401 });
+//   }
 
-  // Fetch data from Supabase and return it.
-  const data = { supabaseData: "Hello World" };
+//   const token = { template: "supabase" };
 
-  return NextResponse.json({ data });
-}
+//   // Fetch data from Supabase and return it.
+//   const data = { supabaseData: "Hello World" };
+
+//   return NextResponse.json({ data });
+// }
