@@ -14,8 +14,9 @@ export default async function MoviesPage({ searchParams }) {
   if (searchParams.sort == "asc") {
     movies.sort((a, b) => a.name.localeCompare(b.name));
   }
-  if (searchParams.sort == "des") { 
-  console.log(searchParams.sort);
+  if (searchParams.sort == "des") {
+    movies.sort((a, b) => b.name.localeCompare(a.name));
+  }
   return (
     <section className="flex flex-col gap-4">
       <nav className="flex flex-row gap-4">

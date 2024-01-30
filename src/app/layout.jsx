@@ -13,15 +13,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-
-      <html lang="en">
-        <body className={inter.className}>
-          <Header />
-          <main className="flex h-2/3 w-screen items-center justify-center">
-            {children}
-          </main>
-        </body>
-      </html>
-
+    <html lang="en">
+      <body className={inter.className}>
+        <Header />
+        <main className="flex h-2/3 w-screen items-center justify-center">
+          {children}
+        </main>
+      </body>
+    </html>
   );
 }
