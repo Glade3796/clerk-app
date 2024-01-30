@@ -3,16 +3,28 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 export default async function MoviesPage({ searchParams }) {
+  const dataMov =
+    await sql`SELECT movies.id, movies.name, movies.genre_id, genres.name AS genre  FROM movies
+   JOIN genres ON movies.genre_id = genres.id
+   GROUP BY movies.id, genres.id;`;
+  const dataCom =
+    await sql`SELECT *, users.username FROM comments JOIN users ON comments.user_id = users.id GROUP BY comments.id, users.id;`;
   const comments = dataCom.rows;
   const movies = dataMov.rows;
   if (searchParams.sort == "asc") {
     movies.sort((a, b) => a.name.localeCompare(b.name));
   }
-  if (searchParams.sort == "des") {
-    movies.sort((a, b) => b.name.localeCompare(a.name));
-  }
+  if (searchParams.sort == "des") { 
+  console.log(searchParams.sort);
   return (
     <section className="flex flex-col gap-4">
+      <nav className="flex flex-row gap-4">
+        <Link href="/dashboard">default </Link>
+
+        <Link href="/dashboard?sort=asc">asc</Link>
+
+        <Link href="/dashboard?sort=des">desc</Link>
+      </nav>
       <Suspense fallback={<p>Loading feed...</p>}>
         {movies.map((movie) => (
           <div

@@ -29,12 +29,12 @@ export default function Header() {
         </Link>
       </nav>
 
-      <div className="flex gap-4">
+      {/* <div className="flex gap-4">
         <SignOutButton className=" hover:text-gray-300" />
         <SignInButton className="hover:text-gray-300 " />
       </div>
 
-      <UserButton afterSignOutUrl="/" />
+      <UserButton afterSignOutUrl="/" /> */}
     </header>
   );
 }

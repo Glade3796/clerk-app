@@ -27,8 +27,8 @@ export default async function Home() {
           collaborations.
         </p>
       </div>
-      <SignOutButton className=" hover:text-gray-300" />
-      <SignInButton className="hover:text-gray-300 " />
+      {/* <SignOutButton className=" hover:text-gray-300" />
+      <SignInButton className="hover:text-gray-300 " /> */}
     </section>
   );
 }
